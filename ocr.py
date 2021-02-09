@@ -7,7 +7,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
 
 mnist = datasets.load_digits()
-X,y = mnist['data'], mnist['target']
+X = mnist['data']
+y = mnist['target']
 X_train,X_test,y_train,y_test = train_test_split(X, y, test_size = 0.2 , random_state = 3116 )
 print(X_train.shape,y_train.shape,X_test.shape,y_test.shape)
 #Initialize Neural Network, set up parameters for your grid search and implement a Random Search procedure
