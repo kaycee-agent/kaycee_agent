@@ -17,11 +17,14 @@ ann = MLPClassifier()
 grid_parameters = {'hidden_layer_sizes': list(range(100,450,50)), 'activation':['relu','identity', 'logistic','tanh'], 'learning_rate':['constant','adaptive','invscaling']}
 ann_grid_search = RandomizedSearchCV(ann, grid_parameters, cv = 5, n_iter = 10)
 ann_grid_search.fit(X_train,y_train)
+
 #Accuracy score
 y_pred = ann_grid_search.predict(X_test)
 print('Accuracy Score:', accuracy_score(y_test,y_pred))
+
 #Best hyperparameters
 print(ann_grid_search.best_estimator_)
+
 #First 10 predictions concatenated with the actual targets
 print(np.concatenate((y_test[:10].reshape(-1,1),y_pred[:10].reshape(-1,1)),axis = 1))
  
