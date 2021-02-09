@@ -6,6 +6,7 @@ from sklearn import datasets
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import accuracy_score
 
+
 mnist = datasets.load_digits()
 X = mnist['data']
 y = mnist['target']
