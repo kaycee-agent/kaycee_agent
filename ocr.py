@@ -22,6 +22,6 @@ print('Accuracy Score:', accuracy_score(y_test,y_pred))
 print(ann_grid_search.best_estimator_)
 #First 10 predictions concatenated with the actual targets
 print(np.concatenate((y_test[:10].reshape(-1,1),y_pred[:10].reshape(-1,1)),axis = 1))
-
+ 
 
    
